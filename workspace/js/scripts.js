@@ -1,9 +1,32 @@
 /*
 Countdown - Code by Zsolt Király
-v1.0.1 - 2018-04-19
+v1.0.1 - 2019-05-13
 */
 
+'use strict';
 var countdown = function() {
+
+    function signatura() {
+        if (window['console']) {
+            const text = {
+                black: '%c     ',
+                blue: '%c   ',
+                author: '%c  Zsolt Király  ',
+                github: '%c  https://zsoltkiraly.com/'
+            }
+
+            const style = {
+                black: 'background: #282c34',
+                blue: 'background: #61dafb',
+                author: 'background: black; color: white',
+                github: ''
+            }
+
+            console.log(text.black + text.blue + text.author + text.github, style.black, style.blue, style.author, style.github);
+        }
+    }
+
+    signatura();
 
     function update(percent, totaltime, pie) {
         var deg;
@@ -24,7 +47,7 @@ var countdown = function() {
         var countDownDate = new Date('' + c.date + '');
         var actiualDate = new Date().getTime();
 
-        return distanceMillisecond = countDownDate - actiualDate;
+        return countDownDate - actiualDate;
     }
 
     function timer(cD, c, tES) {
